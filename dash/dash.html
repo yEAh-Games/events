@@ -12,7 +12,7 @@
   <meta name="msapplication-TileColor" content="#ff4747">
   <meta name="theme-color" content="#ff4747">
   <link rel="canonical" href="https://members.yeahgames.net/{{page.permalink}}">
-  <title>{{page.permalink | remove: '/'}}'s profile | yEAh Accounts</title>
+  <title>Event calendar | yEAh Events</title>
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
 
@@ -360,7 +360,7 @@
       </div>
     </div>
   </nav>
-  <div class="YRrCJSr_j5nopfm4duUc wfz9oKCp_svYP9oWrZuR wBVMFkIGfrKshbvi2gS1 jtAJHOc7mn7b4IKRO59D h8KYXnua2NT4kTVzieom">
+  <div class="YRrCJSr_j5nopfm4duUc wfz9oKCp_svYP9oWrZuR wBVMFkIGfrKshbvi2gS1 jtAJHOc7mn7b4IKRO59D h8KYXnua2NT4kTVzieom" style="padding-top:0rem!important">
 
     <aside id="sidebar"
       class="YRrCJSr_j5nopfm4duUc _SmdlCf6eUKB_V9S5IDj _LPVUrp9Uina5fcERqWC uQByIGHtHssL9HoPQXR4 TYmpscr1PwuC1dpYXDpM bXWhrLpoBVu4aMI8XQxr e8VqoQNK0mbkRFDL3LMV VQS2tmQ_zFyBOC2tkmto wfz9oKCp_svYP9oWrZuR nUVQqdd_RQjvvOrcRIpD uLPch_bqyJDXwe5tynMV gZ3KuFw1JESHhOJhjT8j _YtPVN_LlqV6t4rglMAI bNOx3Wgl24m9GoljaM1X eVV36cVCqgCWHoUvdy_7"
@@ -496,21 +496,48 @@
       class="_SmdlCf6eUKB_V9S5IDj _LPVUrp9Uina5fcERqWC _DGThsbfFGclb6iwA4_9 QhmQ_v3mmDFIP9VaVOfb _JKsnSqP4tIzydAzf5aP yQK4azPzSPqQ3rmcKxWm"
       id="sidebarBackdrop"></div>
 
-    <div id="main-content"
-      class="ahOqFrhzLjivRe8a1kX_ t6gkcSf0Bt4MLItXvDJ_ uLPch_bqyJDXwe5tynMV _lTTGxW9MVI40FyDCtmr jtAJHOc7mn7b4IKRO59D zW58fVqdWJHfumftUEwF h8KYXnua2NT4kTVzieom">
-      <main>
-
-        <iframe style=" display: block;
-        position: absolute;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        right: 0;
-        border: none;
-        height: 100%;
-        width: 100%;" src="https://calendar.google.com/calendar/embed?height=600&wkst=2&bgcolor=%23ff4747&ctz=America%2FToronto&showTitle=0&showPrint=0&showCalendars=0&title=yEAh%20Events&src=eWVhaGdhbWVzZGV2c0BnbWFpbC5jb20&color=%23039BE5" frameborder="0" scrolling="no"></iframe>
-
-      </main>
+      <div id="main-content" class="ahOqFrhzLjivRe8a1kX_ t6gkcSf0Bt4MLItXvDJ_ uLPch_bqyJDXwe5tynMV _lTTGxW9MVI40FyDCtmr jtAJHOc7mn7b4IKRO59D zW58fVqdWJHfumftUEwF h8KYXnua2NT4kTVzieom">
+        <style>
+          #main {
+            position: relative;
+            padding-top: 64px; 
+            padding-left: 200px;
+          }
+      
+          #calendarIframe {
+            position: absolute;
+            bottom: 0;
+            top: 0;
+            left: 0;
+            right: 0;
+            border: none;
+            width: 100%;
+            height: 100%;
+          }
+        </style>
+      
+        <main id="main">
+          <iframe id="calendarIframe" src="https://calendar.google.com/calendar/embed?height=600&wkst=2&bgcolor=%23ff4747&ctz=America%2FToronto&showTitle=0&showPrint=0&showCalendars=0&title=yEAh%20Events&src=eWVhaGdhbWVzZGV2c0BnbWFpbC5jb20&color=%23039BE5" frameborder="0" scrolling="no"></iframe>
+        </main>
+      
+        <script>
+          function adjustIframeHeight() {
+            const iframe = document.getElementById('calendarIframe');
+            const main = document.getElementById('main');
+            const rect = main.getBoundingClientRect();
+            const mainHeight = rect.height;
+            iframe.style.height = `${mainHeight}px`;
+          }
+      
+          // Call the function initially and on window resize
+          adjustIframeHeight();
+          window.addEventListener('resize', adjustIframeHeight);
+        </script>
+      </div>
+      
+      
+      
+      
 
 
     </div>
